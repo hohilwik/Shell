@@ -41,3 +41,14 @@ compare will require a few extra functions to use MD5, but a lot of the code for
 13. password-manager- this will store the login information for Moodle in a usable format
 14. moodle_submitter*- this will again use the Moodle integration in order to take the zipped files and submit them to Moodle. 
 
+
+# Style Guide and Schedule
+
+This is not a particularly long project, especially since we can use syscalls, although bugs might slow it down. Write good code from the start, and it will seriously cut down on the debug time. Add comments for everything your code does to make it more readable for the rest of the team, follow certain style considerations to make the code easier to manage. I'll explain soon what I mean by that. 
+
+I'll be making the general structure for the program by 24th April, as in, all the files required, some of the functions and structures that are obvious to make right now, and we will add to it as time goes. 
+
+I'll add to this section as we develop certain stylistic choices for the code, and we will be following the scrum routine as discussed for the project timeline management. If each member puts in 4 hours per sprint then we can get done with the whole thing in about a week. 
+
+//TODO
+
