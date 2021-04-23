@@ -1,4 +1,4 @@
-## Roadmap
+# Roadmap
 
 We need to have support for a few commands, and the functions required to run those commands effectively. 
 
@@ -6,7 +6,7 @@ There might be a bit of extra code involved that might seem unnecessary given th
 
 
 
-# Commands
+## Commands
 
 1. switch
 2. create
@@ -24,7 +24,7 @@ For update, we will need some extra work for getting the downloads, and possibly
 compare will require a few extra functions to use MD5, but a lot of the code for that is open-source, and even if we have to implement it ourselves, is less than 150 lines of code
 
 
-# Functions and Modules
+## Functions and Modules
 
 1. input- will handle all of the input
 2. output- will handle all of the output
@@ -42,7 +42,7 @@ compare will require a few extra functions to use MD5, but a lot of the code for
 14. moodle_submitter*- this will again use the Moodle integration in order to take the zipped files and submit them to Moodle. 
 
 
-# Style Guide and Schedule
+## Style Guide and Schedule
 
 This is not a particularly long project, especially since we can use syscalls, although bugs might slow it down. Write good code from the start, and it will seriously cut down on the debug time. Add comments for everything your code does to make it more readable for the rest of the team, follow certain style considerations to make the code easier to manage. I'll explain soon what I mean by that. 
 
