@@ -1,11 +1,17 @@
 #include<stdio.h> 
 #include<string.h> 
-#include<stdlib.h> 
-#include<unistd.h> 
+#include<stdlib.h>  
 #include<sys/types.h> 
 #include<sys/wait.h> 
 #include<readline/readline.h> 
 #include<readline/history.h> 
+
+#if defined(_MSC_VER)
+#include <direct.h>
+#define getcwd _getcwd
+#elif defined(__GNUC__)
+#include <unistd.h>
+#endif
 
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"
@@ -24,9 +30,9 @@ void init(){
     
 }
 
-//void tokenizer
+//this is not a tokenizer
 
-int main(){
+int takeInput(){
     init();
     char *user = getenv("USER");
     long long int i=0;
