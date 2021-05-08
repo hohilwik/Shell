@@ -33,7 +33,7 @@ int main(){
         int a;
          getcwd(dire, sizeof(dire));
         printf(ANSI_COLOR_RED "%s" ANSI_COLOR_RESET, user);
-        printf(ANSI_COLOR_GREEN "%s" ANSI_COLOR_RESET, dire);
+        printf(ANSI_COLOR_GREEN "%s>" ANSI_COLOR_RESET, dire);
         fgets(inpt,1024,stdin);
         
         //tokenizer(inpt); send this inpt string to tokenizer
