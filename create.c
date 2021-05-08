@@ -18,10 +18,7 @@ void createdir(char dirname[])
         strcpy(directory, "mkdir ");
         strcat(directory, dirname);
         system(directory);
-        char change[1024];
-        strcpy(change,"cd ");
-        strcat(change, dirname);
-        system(change);
+        
     }
 
 
