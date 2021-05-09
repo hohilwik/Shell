@@ -72,7 +72,7 @@ int main()
 			dir_flag=chdir(directory);
 			if(dir_flag==-1){ printf("Directory does not exist\n"); continue; }
 			char fileName[50];
-			strcpy(fileName, "submitter.py);
+			strcpy(fileName, "submitter.py");
 			dir_flag=Test_file(fileName);
 				if(dir_flag==-2)		{ printf("dist folder does not exist\n"); }
 				else if(dir_flag==-1)	{ printf("dist/%s does not exist\n", fileName); }
