@@ -21,19 +21,44 @@ There are 4 directories:
 Description of the functionality of each command and an example on how to use them.
 
 * **switch \<subject\>** :  Changes the name of the subject  in  the  prompt  and  changes folders  appropriately.
-Eg: switch DSA, would change the prompt from xyz/LA> to xyz>DSA and navigate to the DSA directory.
+	`flag=chdir(temp);`
+	(returns flag; to verify if switch was successful).
+	
+	Eg: switch DSA, would change the prompt from xyz/LA> to xyz>DSA and navigate to the DSA directory.
 
 * **create \<assignment\>** :   Creates  a  new  assignment folder. Puts the contents of the dist folder and the problem statement into the current directory.
-Eg: create Assignment
+	
+	Asks input for URL, stores that in log file.
+	Asks input for local location, stores that in log file.
+	Creates directory
+	run update command
+	
+	Eg: create Assignment
 
 * **update \<assignment\>** :   Updates with the new assignment files. Deletes old files and replaces them with the new ones.
-Eg: update Assignment
+
+	choose whether locally or to download
+	if locally ( access log file with the location and copy that directory )
+	else if download ( use curl to download, then unzip, and copy to directory )
+	
+	Eg: update Assignment
 
 * **test  \<assignment\>** :  Runs the submitter file in the  dist  folder.   Store  the  errors in a file.
-Eg: test Assignment
+
+	This function obtains the directory path:
+	`char* DirPath()`
+	
+	And this function tests the file in the folder if it exists
+	`int Test_file(char *fileName)`
+	
+	Eg: test Assignment
 
 * **submit  \<assignment\>** : Makes a zip file of the assignment folder.
-Eg: submit Assignment
+	Uses a system call to create a zip of the Assignment folder:
+	
+	`system(zipCommand);`
+	
+	Eg: submit Assignment
 
 * **compare \<assignment\> \<zipfile\>** : Compares assignment folder with the submitted zip. 
 
@@ -52,6 +77,12 @@ Eg: submit Assignment
 
 * **use \<assignment\>** : Changes the prompt to xyz/DSA/\<assignment\>. And for all subsequent commands, if the \<assignment\> argument is not passed, it will automatically use the current directory, i.e \<assignment\>.
 
-	The use function takes the Assignment folder name as input. It gets the complete path of the Assignment folder and stores it in a log file so that subsequent function calls can use it.
-Eg: use Assignment
+	The use function takes the Assignment folder name as input. 
+	It gets the complete path of the Assignment folder and stores it in a log file so that subsequent function calls can use it:
+	`fprintf(fptr, "%s", cwdPath);`
+	
+	The getPath function is called to get the absolute path to the Assignment folder:
+	`int getPath(char* path)`
+	
+	Eg: use Assignment
 
