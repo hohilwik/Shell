@@ -53,14 +53,18 @@ char* DirPath()
 }
 
 //Tests the file in the folder if it exists
-void Test_file(char *fileName)
+int Test_file(char *fileName)
 {
     //concatenating strings to get the directory path of the required folder/file
     char dist[1024]= "/dist";
     char path[1024]=strcat(DirPath(), dist);
     int flag1=chdir(dist);
+	if(flag1!=0)
+	{ 
+		return -2; //dist does not exist 
+	}
     //the function returns 1 if file/folder exists -1 if it doesn't exist
-    int dir = doesFileExist( strcat(path, fileName) );
+    int dir = doesFileExist( strcat(path, strcat("/", fileName) ) );
       if(dir == 1)
       {
         /*if the path belongs to a folder we need to check for the existence of the file in that folder.
@@ -82,5 +86,7 @@ void Test_file(char *fileName)
 	//stop logging
 	system("exit");
       }
+	return dir;
+	//return -2 if dist does not exist, -1 is /dist/file does not exist, and 0 if successful
 }
 
