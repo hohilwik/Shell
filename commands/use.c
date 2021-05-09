@@ -65,7 +65,7 @@ void use(char assignmentFolderName[])
 }
 
 
-void getPath(char* path)
+int getPath(char* path)
 {
     //reading path from the log file
 
@@ -79,7 +79,7 @@ void getPath(char* path)
     {
         printf("Error; could not get path from path.txt");
         //exit(1);
-        return;
+        return -1;
     }
 
     fscanf(fptr, "%s", cwdPath);
@@ -90,7 +90,7 @@ void getPath(char* path)
     fclose(fptr);
 
     strcpy(path, cwdPath);   //copying path into input string
-
+    return 0;
 }
 
 // for testing
