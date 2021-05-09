@@ -64,21 +64,22 @@ int Test_file(char *fileName)
 		return -2; //dist does not exist 
 	}
     //the function returns 1 if file/folder exists -1 if it doesn't exist
-    int dir = doesFileExist( strcat(path, strcat("/", fileName) ) );
+	strcat(path, "/");
+    int dir = doesFileExist( strcat(path, fileName ) );
       if(dir == 1)
       {
         /*if the path belongs to a folder we need to check for the existence of the file in that folder.
         So we open the folder using its path*/ 
             //using system() function to communicate with the terminal to execute the file if it exists
 	char temp[1024]="python3 ";
-	temp= strcat(temp, fileName);
-	//temp is now "python3 filename.py
+	strcat(temp, fileName);
+	//temp is now "python3 filename.py"
 	char script[1024]="script --timing=";
-	script= strcat(script, fileName);
-	script= strcat(script, "_logtime.txt ");
-	script= strcat(script, fileName);
-	script= strcat(script, "_log.txt");
-	//strigng becomes "script --timing=filename.py_logtime.txt filename_log.txt"
+	strcat(script, fileName);
+	strcat(script, "_logtime.txt ");
+	strcat(script, fileName);
+	strcat(script, "_log.txt");
+	//string becomes "script --timing=filename.py_logtime.txt filename_log.txt"
 	//start logging
 	system(script);
 	//run the command
