@@ -2,6 +2,7 @@
 #if defined(_MSC_VER)
 #include <direct.h>
 #define getcwd _getcwd
+#define USER USERNAME
 #elif defined(__GNUC__)
 #include <unistd.h>
 #endif
