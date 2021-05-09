@@ -18,9 +18,8 @@ int Test_file(char *fileName);  //return -2 if dist does not exist, -1 is /dist/
 
 
 //use function
-void use(char assignmentFolderName[]);  ////returns 0 if successful, -1 otherwise
-
-void getPath(char* path);
+void use(char assignmentFolderName[]);  
+int getPath(char* path);  //returns 0 if successful, -1 otherwise 
 
 
 #endif
