@@ -6,7 +6,7 @@
 
 #if defined(_MSC_VER)
 #include <direct.h>
-#define getcwd_getcwd
+#define getcwd _getcwd
 #elif defined(__GNUC__)
 #endif
 
@@ -53,21 +53,22 @@ char* DirPath()
 }
 
 //Tests the file in the folder if it exists
-void Test_file(char* fileName)
+void Test_file(char *fileName)
 {
-/*Merging strings to get the possible directory path of the required file/folder*/
-    char* new =strcat(DirPath(),"/");
-    char* path =strcat(new,fileName);
-    
+    //concatenating strings to get the directory path of the required folder/file
+    char dist[1024]= "/dist";
+    char path[1024]=strcat(DirPath(), dist);
+    int flag1=chdir(dist);
     //the function returns 1 if file/folder exists -1 if it doesn't exist
-    int dir = doesFileExist(path);
-    if(dir == 1){
+    int dir = doesFileExist( strcat(path, fileName) );
+      if(dir == 1)
+      {
         /*if the path belongs to a folder we need to check for the existence of the file in that folder.
         So we open the folder using its path*/ 
-        opendir(path);
-        if(fileName == "submitter.py"){
             //using system() function to communicate with the terminal to execute the file if it exists
-            system("python3 submitter.py");
-        }
-    }
+			char temp[1024]="python3 ";
+			temp= strcat(temp, fileName);
+            system(temp);
+      }
 }
+
