@@ -28,18 +28,18 @@ Description of the functionality of each command and an example on how to use th
 
 * **create \<assignment\>** :   Creates  a  new  assignment folder. Puts the contents of the dist folder and the problem statement into the current directory.
 	
-	Asks input for URL, stores that in log file.
-	Asks input for local location, stores that in log file.
-	Creates directory
-	run update command
+	* Asks input for URL, stores that in log file.
+	* Asks input for local location, stores that in log file.
+	* Creates directory
+	* run update command
 	
 	Eg: create Assignment
 
 * **update \<assignment\>** :   Updates with the new assignment files. Deletes old files and replaces them with the new ones.
 
-	choose whether locally or to download
-	if locally ( access log file with the location and copy that directory )
-	else if download ( use curl to download, then unzip, and copy to directory )
+	* choose whether locally or to download
+	* if locally ( access log file with the location and copy that directory )
+	* else if download ( use curl to download, then unzip, and copy to directory )
 	
 	Eg: update Assignment
 
