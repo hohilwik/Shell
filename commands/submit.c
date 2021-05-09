@@ -26,9 +26,12 @@ void submit(char assignmentFolderName[])
 {
 
     //zip the Assignment folder
-    char zipCommand[80];
+    char zipCommand[1024];
+    char assignment[1024];
+    strcpy(assignment, assignmentFolderName);
+    strcat(assignment, "Zip.zip ");
     strcpy(zipCommand, "zip -r ");
-    strcat(zipCommand, "AssignmentZip.zip ");
+    strcat(zipCommand, assignment);
     strcat(zipCommand, assignmentFolderName);    //eg: "zip -r AssignmentZip.zip Assignment";
 
     system(zipCommand);
