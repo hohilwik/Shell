@@ -4,6 +4,10 @@
 
 //add info about cmake, etc here
 
+Run the script below with the log files to see the output of the test played back in the terminal.
+
+`scriptreplay --timing=assignmentName_logtime.txt assignmentName_log.txt`
+
 ## Project Structure
 
 There are 4 directories:
