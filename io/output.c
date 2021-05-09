@@ -30,19 +30,21 @@ void init(){
     
 }
 
-char* takeInput(int flag)
+int prompt(int flag)
 {
     //init();
-    char *user = getenv("USER");
-    long long int i=0;
+        int check=0;
+        char *user = getenv("USER");
         char *inpt;
         char dire[1024]; 
-        if(flag==0){ getcwd(dire, sizeof(dire)); }
-        if(flag==1){ getPath(dire); }
+        if(flag==0){ check=getcwd(dire, sizeof(dire)); }
+        if(flag==1){ check=getPath(dire); }
+        if(check==-1){ return check; }
         printf(ANSI_COLOR_RED "%s" ANSI_COLOR_RESET, user);
         printf(ANSI_COLOR_GREEN "%s" ANSI_COLOR_RESET, dire);
-        inpt = readline("/>");
-        add_history(inpt);
-        //tokenizer(inpt); send this inpt string to tokenizer
-    return inpt;
+        pritnf("/>");
+        //inpt = readline("/>");
+        //add_history(inpt);
+    //input gets returned to main 
+    return check;
 }
