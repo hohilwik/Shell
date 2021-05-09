@@ -30,22 +30,19 @@ void init(){
     
 }
 
-//this is not a tokenizer
-
-int takeInput(){
-    init();
+char* takeInput(int flag)
+{
+    //init();
     char *user = getenv("USER");
     long long int i=0;
-    while(i<1000){
         char *inpt;
         char dire[1024]; 
-         getcwd(dire, sizeof(dire));
+        if(flag==0){ getcwd(dire, sizeof(dire)); }
+        if(flag==1){ getPath(dire); }
         printf(ANSI_COLOR_RED "%s" ANSI_COLOR_RESET, user);
         printf(ANSI_COLOR_GREEN "%s" ANSI_COLOR_RESET, dire);
         inpt = readline("/>");
         add_history(inpt);
-        i++;
         //tokenizer(inpt); send this inpt string to tokenizer
-    }
-    return 0;
+    return inpt;
 }
