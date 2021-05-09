@@ -36,10 +36,22 @@ Eg: test Assignment
 Eg: submit Assignment
 
 * compare \<assignment\> \<zipfile\>: Compares assignment folder with the submitted zip. 
-Compare function takes the Assignment folder name and the zip file name as inputs. Does md5 hash on the files in both directories and compares them to check if any of the files in the zip are different from any of the files in the assignment folder and prints a list of those files. 
+
+Compare function takes the Assignment folder name and the zip file name as inputs. Does md5 hash on the files in both directories. Stores the hash in an auxilary folder using this function:
+
+`void makeAuxDirectory()`
+
+compares the hash to check if any of the files in the zip are different from any of the files in the assignment folder and prints a list of those files:
+
+`printf("\nThe following files in the assignment folder are different from the zip file:\n");
+    system(diffCommand);`
+    
+(deletes the auxilary folder at the end).
+
 Eg: compare Assignment AssignmentZip.zip
 
 * use \<assignment\>: Changes the prompt to xyz/DSA/\<assignment\>. And for all subsequent commands, if the \<assignment\> argument is not passed, it will automatically use the current directory, i.e \<assignment\>.
+
 The use function takes the Assignment folder name as input. It gets the complete path of the Assignment folder and stores it in a log file so that subsequent function calls can use it.
 Eg: use Assignment
 
