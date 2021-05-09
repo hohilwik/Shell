@@ -10,15 +10,16 @@ void compare(char assignmentFolderName[], char zipFolderName[]);
 void submit(char assignmentFolderName[]);
 
 //switch function
-int switchdir(char *directory);
+int switchdir(char *directory);//returns 0 if successful -1 otherwise
 
 //test function
-int doesFileExist(const char* path);
 char* DirPath();
-int Test_file(char *fileName);
+int Test_file(char *fileName);  //return -2 if dist does not exist, -1 is /dist/file does not exist, and 0 if successful
+
 
 //use function
-void use(char assignmentFolderName[]);
+void use(char assignmentFolderName[]);  ////returns 0 if successful, -1 otherwise
+
 void getPath(char* path);
 
 
