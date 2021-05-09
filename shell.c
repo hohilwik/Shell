@@ -13,13 +13,14 @@ int main()
 {
 	init();
 	char input[1024], directory[1024], extra[1024], path[1024];
-	int command, use_flag=0, dir_flag;
+	int command, use_flag=0, dir_flag, oneword;
 	while(1)
 	{
 		prompt(use_flag);
 		scanf("%s", input);
 		command= -1;
 		dir_flag=0;
+		oneword=0;
 		if(strcmp(input, "switch")==0)	{ command=0; }
 		if(strcmp(input, "create")==0)	{ command=1; }
 		if(strcmp(input, "update")==0)	{ command=2; }
@@ -29,12 +30,20 @@ int main()
 		if(strcmp(input, "compare")==0)	{ command=6; }
 		if(strcmp(input, "use")==0)		{ command=7; }
 		if(strcmp(input, "cd")==0)		{ command=8; }
-		if(strcmp(input, "pwd")==0)		{ command=9; }
+		if(strcmp(input, "pwd")==0)		{ command=9;  oneword=1; }
+		if(strcmp(input, "ls")==0)		{ command=10; oneword=1; }
+		if(strcmp(input, "date")==0)	{ command=11; oneword=1; }
+		if(strcmp(input, "printdir")==0){ command=12; oneword=1; }
+		if(strcmp(input, "exit")==0)	{ command=13; oneword=1; }
 		
+		
+		if( oneword==0 )
+	   {
 		if(command!= -1 && use_flag==0 )
 		{ scanf(" %s", directory); }
 		else if(command== -1)
 		{ scanf(" %[^\n]s", directory); }
+	   }
 		
 		if(use_flag==0)
 		{ dir_flag=getcwd(path, sizeof(path) ); }
@@ -106,6 +115,24 @@ int main()
 			strcat(input, directory);
 			system(input);
 			break;
+			
+			case 10: //ls
+			system("ls");
+			break;
+			
+			case 11: //date
+			system("date");
+			break;
+			
+			case 12: //printdir 
+			printDir(directory);
+			break;
+			
+			case 13: //exit 
+			exit(0);
+			break;
+			
+			
 			
 		}
 	
