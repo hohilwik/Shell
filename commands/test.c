@@ -83,7 +83,7 @@ int Test_file(char *fileName)
 	int size=sizeof(fileName);
 	for(int i=0; i<size; i++)
 	{
-		if(fileName[i]=='.'){ fileName[i]='_'; 
+		if(fileName[i]=='.'){ fileName[i]='_'; }
 		//changing all the periods to underscores
 	}
 	char script[1024]="script --timing=";
