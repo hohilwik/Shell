@@ -20,38 +20,38 @@ There are 4 directories:
 
 Description of the functionality of each command and an example on how to use them.
 
-* switch \<subject\>:  Changes the name of the subject  in  the  prompt  and  changes folders  appropriately.
+* **switch \<subject\>** :  Changes the name of the subject  in  the  prompt  and  changes folders  appropriately.
 Eg: switch DSA, would change the prompt from xyz/LA> to xyz>DSA and navigate to the DSA directory.
 
-* create \<assignment\>:   Creates  a  new  assignment folder. Puts the contents of the dist folder and the problem statement into the current directory.
+* **create \<assignment\>** :   Creates  a  new  assignment folder. Puts the contents of the dist folder and the problem statement into the current directory.
 Eg: create Assignment
 
-* update \<assignment\>:   Updates with the new assignment files. Deletes old files and replaces them with the new ones.
+* **update \<assignment\>** :   Updates with the new assignment files. Deletes old files and replaces them with the new ones.
 Eg: update Assignment
 
-* test  \<assignment\>:  Runs the submitter file in the  dist  folder.   Store  the  errors in a file.
+* **test  \<assignment\>** :  Runs the submitter file in the  dist  folder.   Store  the  errors in a file.
 Eg: test Assignment
 
-* submit  \<assignment\>: Makes a zip file of the assignment folder.
+* **submit  \<assignment\>** : Makes a zip file of the assignment folder.
 Eg: submit Assignment
 
-* compare \<assignment\> \<zipfile\>: Compares assignment folder with the submitted zip. 
+* **compare \<assignment\> \<zipfile\>** : Compares assignment folder with the submitted zip. 
 
-Compare function takes the Assignment folder name and the zip file name as inputs. Does md5 hash on the files in both directories. Stores the hash in an auxilary folder using this function:
+	Compare function takes the Assignment folder name and the zip file name as inputs. Does md5 hash on the files in both directories. Stores the hash in an auxilary folder using this function:
 
-`void makeAuxDirectory()`
+	`void makeAuxDirectory()`
 
-compares the hash to check if any of the files in the zip are different from any of the files in the assignment folder and prints a list of those files:
+	compares the hash to check if any of the files in the zip are different from any of the files in the assignment folder and prints a list of those files:
 
-`printf("\nThe following files in the assignment folder are different from the zip file:\n");
+	`printf("\nThe following files in the assignment folder are different from the zip file:\n");
     system(diffCommand);`
     
-(deletes the auxilary folder at the end).
+	(deletes the auxilary folder at the end).
 
-Eg: compare Assignment AssignmentZip.zip
+	Eg: compare Assignment AssignmentZip.zip
 
-* use \<assignment\>: Changes the prompt to xyz/DSA/\<assignment\>. And for all subsequent commands, if the \<assignment\> argument is not passed, it will automatically use the current directory, i.e \<assignment\>.
+* **use \<assignment\>** : Changes the prompt to xyz/DSA/\<assignment\>. And for all subsequent commands, if the \<assignment\> argument is not passed, it will automatically use the current directory, i.e \<assignment\>.
 
-The use function takes the Assignment folder name as input. It gets the complete path of the Assignment folder and stores it in a log file so that subsequent function calls can use it.
+	The use function takes the Assignment folder name as input. It gets the complete path of the Assignment folder and stores it in a log file so that subsequent function calls can use it.
 Eg: use Assignment
 
