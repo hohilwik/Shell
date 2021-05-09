@@ -66,9 +66,21 @@ void Test_file(char *fileName)
         /*if the path belongs to a folder we need to check for the existence of the file in that folder.
         So we open the folder using its path*/ 
             //using system() function to communicate with the terminal to execute the file if it exists
-			char temp[1024]="python3 ";
-			temp= strcat(temp, fileName);
-            system(temp);
+	char temp[1024]="python3 ";
+	temp= strcat(temp, fileName);
+	//temp is now "python3 filename.py
+	char script[1024]="script --timing=";
+	script= strcat(script, fileName);
+	script= strcat(script, "_logtime.txt ");
+	script= strcat(script, fileName);
+	script= strcat(script, "_log.txt");
+	//strigng becomes "script --timing=filename.py_logtime.txt filename_log.txt"
+	//start logging
+	system(script);
+	//run the command
+        system(temp);
+	//stop logging
+	system("exit");
       }
 }
 
