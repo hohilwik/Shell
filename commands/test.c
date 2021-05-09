@@ -10,7 +10,9 @@
 #elif defined(__GNUC__)
 #endif
 
-#include "test.h"
+//#include "test.h"
+#include "commands.h"
+#include "../directoryfunc/createDir.h"
 
 //This program tests if a folder/file exists in a given directory when given an input
 /*for a particular file submitter.py if the file is indeed present in the directory
@@ -24,20 +26,22 @@
 //6. If the folder exists we open it to check for the file in it
 //7. If the file exists we execute the file using system() function
  
-//checks if file/folder exists
-int doesFileExist(const char* path)
-{
-    int val;
+
+// //checks if file/folder exists
+// int doesFileExist(const char* path)
+// {
+//     int val;
     
-    /*access() will take the path of the file/folder to be checked and F_OK will check for the file existence */
-    if(access(path ,F_OK) == -1){
-        val = -1;//folder/file doesn't exist 
-    }
-    else
-        val = 1;//folder/file exists
+//     /*access() will take the path of the file/folder to be checked and F_OK will check for the file existence */
+//     if(access(path ,F_OK) == -1){
+//         val = -1;//folder/file doesn't exist 
+//     }
+//     else
+//         val = 1;//folder/file exists
     
-    return val;
-}
+//     return val;
+// }
+
 
 //obtains directory path
 char* DirPath()
