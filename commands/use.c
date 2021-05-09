@@ -34,6 +34,7 @@ void use(char assignmentFolderName[])
     if (getcwd(cwdPath, sizeof(cwdPath)) == NULL)
     {
         printf("Could not get current working directory path.");
+        return;
     }
     // //testing
     // else
@@ -55,7 +56,8 @@ void use(char assignmentFolderName[])
     if (fptr == NULL)
     {
         printf("Error; could not create path.txt");
-        exit(1);
+        //exit(1);
+        return;
     }
 
     fprintf(fptr, "%s", cwdPath);
@@ -76,7 +78,8 @@ void getPath(char* path)
     if (fptr == NULL)
     {
         printf("Error; could not get path from path.txt");
-        exit(1);
+        //exit(1);
+        return;
     }
 
     fscanf(fptr, "%s", cwdPath);

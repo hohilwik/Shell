@@ -99,9 +99,9 @@ void compare(char assignmentFolderName[], char zipFolderName[])
 
     
     //removing aux directory; i.e: hashfolder
-    char *removefolderCommand = "rm -r hashfolder";
+    //char *removefolderCommand = "rm -r hashfolder";
     
-    system(removefolderCommand);
+    system("rm -r hashfolder");
 
 }
 

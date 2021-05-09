@@ -1,1 +1,5 @@
 
+unistd.h
+sys/stat.h
+sys/types.h
+curl
