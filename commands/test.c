@@ -61,7 +61,9 @@ int Test_file(char *fileName)
 {
     //concatenating strings to get the directory path of the required folder/file
     char dist[1024]= "/dist";
-    char path[1024]=strcat(DirPath(), dist);
+    char path[1024];
+    strcpy(path, DirPath() );
+    strcat(path, dist);
     int flag1=chdir(dist);
 	if(flag1!=0)
 	{ 
@@ -78,12 +80,18 @@ int Test_file(char *fileName)
 	char temp[1024]="python3 ";
 	strcat(temp, fileName);
 	//temp is now "python3 filename.py"
+	int size=sizeof(fileName);
+	for(int i=0; i<size; i++)
+	{
+		if(fileName[i]=='.'){ fileName[i]='_'; 
+		//changing all the periods to underscores
+	}
 	char script[1024]="script --timing=";
 	strcat(script, fileName);
 	strcat(script, "_logtime.txt ");
 	strcat(script, fileName);
 	strcat(script, "_log.txt");
-	//string becomes "script --timing=filename.py_logtime.txt filename_log.txt"
+	//string becomes "script --timing=filename_py_logtime.txt filename_py_log.txt"
 	//start logging
 	system(script);
 	//run the command
