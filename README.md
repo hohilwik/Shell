@@ -35,9 +35,11 @@ Eg: test Assignment
 * submit  \<assignment\>: Makes a zip file of the assignment folder.
 Eg: submit Assignment
 
-* compare \<assignment\> \<zipfile\>: Compares assignment folder with the submitted zip. Checks if any of the files in the zip are different from any of the files in the assignment folder and  prints a list of those files. (Uses md5 hash to compare).
+* compare \<assignment\> \<zipfile\>: Compares assignment folder with the submitted zip. 
+Compare function takes the Assignment folder name and the zip file name as inputs. Does md5 hash on the files in both directories and compares them to check if any of the files in the zip are different from any of the files in the assignment folder and prints a list of those files. 
 Eg: compare Assignment AssignmentZip.zip
 
 * use \<assignment\>: Changes the prompt to xyz/DSA/\<assignment\>. And for all subsequent commands, if the \<assignment\> argument is not passed, it will automatically use the current directory, i.e \<assignment\>.
+The use function takes the Assignment folder name as input. It gets the complete path of the Assignment folder and stores it in a log file so that subsequent function calls can use it.
 Eg: use Assignment
 
