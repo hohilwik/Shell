@@ -1,35 +1,8 @@
-// -change input.c to only take input, or, merge io together
-//DONE
 
-// -remove the use of readline as it causes dependency issues
-//DONE
+//TODO -test create and update functions \
 
-// -test compare and use functions
-//DONE
+//TODO add unzip syscalls to finish updater \
 
-// -finalize tokenizer after input is done
-//DONE doing it differently
+//TODO setup command \
 
-// -Moodle CAS is still causing problems, if unfixable, give up on moodle integration
-//NO yes. Just using regular curl and cp now
-
-// -password manager
-//NO
-
-// -login management
-//NO
-
-//TODO -update command
-
-// -submit command
-//DONE
-
-// -commit test function
-//DONE
-
-//TODO -merge functions to "create" command file
-
-// -merge all directory functions
-//DONE
-
-//TODO -test all these
+//TODO add setup syntax and how-to-use to the README
