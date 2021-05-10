@@ -12,7 +12,7 @@
 
 //#include "test.h"
 #include "commands.h"
-#include "directoryfunc/createDir.h"
+#include "directoryfunc/directoryfunc.h"
 
 //This program tests if a folder/file exists in a given directory when given an input
 /*for a particular file submitter.py if the file is indeed present in the directory
