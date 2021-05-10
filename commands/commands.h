@@ -1,6 +1,10 @@
 #ifndef __COMMANDS_
 #define __COMMANDS_
 
+//create function
+int create(char* directory);
+int writelogger(char* directory, int mode);
+
 
 //compare function
 void makeAuxDirectory();
