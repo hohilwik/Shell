@@ -1,5 +1,9 @@
 # Assignment Shell
 
+The project is a command line app which manages and maintains the file structure of assignment files. It is able to update with changes to the assignment, compare the user\'s current assignment with the submitted assignment, and more. 
+
+This project also has replay functionality. In which (through the use of log files) the commands in the terminal can be replayed like a video. This will be useful in situations where the code was working previously, but it isn\'t anymore. (More explaination on this later).
+
 ## Project Structure
 
 There are 4 main directories:
@@ -37,15 +41,6 @@ After that, whenever you want to run the program, go to the directory where it w
 <br>
 <br>
 
-Run the script below with the log files to see the output of the test played back in the terminal.
-
-`scriptreplay --timing=assignmentName_logtime.txt assignmentName_log.txt`
-
-This project maintains and stores log files. So this script uses the log files for the terminal session, and replays them like a video.
-
-This keeps track of everything so that the log files can be sent to TAs for debugging. Moreover it also solves the issue the situation where the code is not worked, but was working previously. 
-
-
 ## Function Descriptions and Usage
 
 Description of the functionality of each command and an example on how to use them.
@@ -80,6 +75,8 @@ Description of the functionality of each command and an example on how to use th
 	 create <name_for_the_Assignment_folder> 
 	 ```
 	Eg: 'create Assignment' will store the assignment files into a folder called 'Assignment'.
+	
+	\**Note: if the use command has already been used then even if the \<Assignment\> parameter is not passed, it will be passed by default.*
 
 * **update \<assignment\>** :   Updates the assignment folder with the new assignment files. Deletes old files and replaces them with the new ones.
 
@@ -93,6 +90,8 @@ Description of the functionality of each command and an example on how to use th
 	 update <name_of_the_Assignment_folder> 
 	 ```
 	 Eg: 'update Assignment' will update the files in the Assignment folder with the latest files.
+	 
+	 \**Note: if the use command has already been used then even if the \<Assignment\> parameter is not passed, it will be passed by default.*
 
 * **test  \<assignment\>** :  Runs the submitter.py file in the  dist  folder.   Store  the  errors in a file.
 
@@ -110,8 +109,18 @@ Description of the functionality of each command and an example on how to use th
 	 test <Assignment> 
 	 ```
 	 Eg: 'test Assignment' runs submitter.py on Assignment.
+	 
+	\**Note: if the use command has already been used then even if the \<Assignment\> parameter is not passed, it will be passed by default.*
 	
-	
+	 \***Replay Functionality**:
+	Run the script below with the log files to see the output of the test played back in the terminal.
+	```bash
+	scriptreplay --timing=assignmentName_logtime.txt assignmentName_log.txt
+	```
+	This project maintains and stores log files. So this script uses the log files for the terminal session, and replays them like a video.
+
+	This keeps track of everything so that the log files can be sent to TAs for debugging. Moreover it also solves the issue the situation where the code is not working, but was working previously. 
+
 * **submit  \<assignment\>** : Makes a zip file of the assignment folder.
 	Uses a system call to create a zip of the Assignment folder:
 	
@@ -125,6 +134,7 @@ Description of the functionality of each command and an example on how to use th
 	 ```
 	 Eg: 'submit Assignment' creates a zip folder in the current working directory with the name \'AssignmentZip.zip'
 	
+	**Note: if the use command has already been used then even if the \<Assignment\> parameter is not passed, it will be passed by default.*
 	
 * **compare \<my_assignment\> \<submitted_zipfile\>** : Compares the user\'s assignment folder (with their assignment files) with the submitted zip. 
 	
