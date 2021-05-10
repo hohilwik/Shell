@@ -1,3 +1,5 @@
+#include <string.h>
+
 void copyDir(char *sourceDir, char *targetDir)
 {
 	char copyCommand[1024];
