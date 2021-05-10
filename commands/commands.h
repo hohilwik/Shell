@@ -16,6 +16,9 @@ int switchdir(char *directory);//returns 0 if successful -1 otherwise
 char* DirPath();
 int Test_file(char *fileName);  //return -2 if dist does not exist, -1 is /dist/file does not exist, and 0 if successful
 
+//update function
+int update(char *directory);
+int updater(const char *directory, int mode);
 
 //use function
 void use(char assignmentFolderName[]);  
