@@ -3,8 +3,8 @@
 #include<stdlib.h>  
 #include<sys/types.h> 
 #include<sys/wait.h> 
-#include<readline/readline.h> 
-#include<readline/history.h> 
+//#include<readline/readline.h> 
+//#include<readline/history.h> 
 
 #if defined(_MSC_VER)
 #include <direct.h>
@@ -44,13 +44,13 @@ printf(ANSI_COLOR_CYAN"                     b :                                 
 printf(ANSI_COLOR_CYAN"                     `r :                                   __.__,--,;'))))).\n");
 printf(ANSI_COLOR_CYAN"                      b :                         ___...--'; `))))))))' '' `>!9eOc\n");
 printf(ANSI_COLOR_CYAN"                      `r :              __,--:-;;;)))))))))))'' '' ' ' _. -'-'.`!9Eg.\n");
-printf(ANSI_COLOR_CYAN"                       L : . __.--_--:,)))))))))))'' ' '  _. ._.-'-'-'-'\-'\---\/\ ``Qu.\n");
-printf(ANSI_COLOR_CYAN"                       `,: !x;:)))))))) ')'' ' _ _._-.'\'\_\_-'\''-\'_'\-'\'\ -_\'-\-. 95n.\n");
-printf(ANSI_COLOR_CYAN"                        D` ))))'''  _ .___.-_:/-/\/-_\ /-_, /-,\ \-/_\/\,-\_/-\/-/--' ..v<]9o.\n");
-printf(ANSI_COLOR_CYAN"                      __b :<> -_\._/\,- ,_ -\ _/\-\ _-\ -_/-\,\/,-/\_/-_\'\--' .vvvvvvv}v}}x}]NEo.\n");
-printf(ANSI_COLOR_CYAN"                .ooPO%LOCu  `< `/\_ -:\/_/-/,\/,/-,/_,-/\ :_\:_-:__-'' ...vvvvvvvvvvvvxx}vx}}}}==No\n");
-printf(ANSI_COLOR_CYAN"              .oPO'       `y. `< ~-\ _\/\_,- \ , - ,___..--' .......>>vvvvvvvvx<xvvxx}=x===}~^^   I\n");
-printf(ANSI_COLOR_CYAN"        om3jR&57'          `Ey, `\ `!,\ \-/_/\_---''.......vv>>vvvvvvvvvv)v<xvx=}=<~~^~`       :_yd\n");
+printf(ANSI_COLOR_CYAN"                       L : . __.--_--:,)))))))))))'' ' '  _. ._.-'-'-'-'\\-'\\---\\/\\ ``Qu.\n");
+printf(ANSI_COLOR_CYAN"                       `,: !x;:)))))))) ')'' ' _ _._-.'\\'\\_\\_-'\\''-\\'_'\\-'\\'\\ -_\\'-\\-. 95n.\n");
+printf(ANSI_COLOR_CYAN"                        D` ))))'''  _ .___.-_:/-/\\/-_\\ /-_, /-,\\ \\-/_\\/\\,-\\_/-\\/-/--' ..v<]9o.\n");
+printf(ANSI_COLOR_CYAN"                      __b :<> -_\\._/\\,- ,_ -\\ _/\\-\\ _-\\ -_/-\\,\\/,-/\\_/-_\\'\\--' .vvvvvvv}v}}x}]NEo.\\n");
+printf(ANSI_COLOR_CYAN"                .ooPO%LOCu  `< `/\\_ -:\\/_/-/,\\/,/-,/_,-/\\ :_\\:_-:__-'' ...vvvvvvvvvvvvxx}vx}}}}==No\n");
+printf(ANSI_COLOR_CYAN"              .oPO'       `y. `< ~-\\ _\\/\\_,- \\ , - ,___..--' .......>>vvvvvvvvx<xvvxx}=x===}~^^   I\n");
+printf(ANSI_COLOR_CYAN"        om3jR&57'          `Ey, `\\ `!,\\ \\-/_/\\_---''.......vv>>vvvvvvvvvv)v<xvx=}=<~~^~`       :_yd\n");
 printf(ANSI_COLOR_CYAN"    _.rq8'                    `L, `<_ `--'.......vv<<<<v<<<<x<vv<vvvvxxxx=>~~~`         iuuuaE'\n");
 printf(ANSI_COLOR_CYAN"  .@tTL'                        `y,  `< .-vvv<<<<<<<<<xxvx>vvvvv=>~~~~`         _uuua'''\n");
 printf(ANSI_COLOR_CYAN".&P'                              `L,  `>>><<<<><>v<vvvvvx~`::`       ::_uuua'''\n");
@@ -60,9 +60,9 @@ printf(ANSI_COLOR_CYAN"                                        `L,:    _uuua''\n
 printf(ANSI_COLOR_CYAN"                                          `LaE''\n"ANSI_COLOR_RESET);
 
 
-    printf("\n**************************************\n");
+    printf("\n\n************************************************************************\n\n");
     printf(ANSI_COLOR_BLUE "\n\t\tAssignment Shell\n" ANSI_COLOR_RESET);
-    printf("\n**************************************\n");
+    printf("\n**************************************************************************\n\n\n\n");
     sleep(1);
     
 }
@@ -79,7 +79,7 @@ int prompt(int flag)
         if(check==-1){ return check; }
         printf(ANSI_COLOR_RED "%s" ANSI_COLOR_RESET, user);
         printf(ANSI_COLOR_GREEN "%s" ANSI_COLOR_RESET, dire);
-        pritnf("/>");
+        printf("/>");
         //inpt = readline("/>");
         //add_history(inpt);
     //input gets returned to main 
