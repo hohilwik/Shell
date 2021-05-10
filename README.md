@@ -1,8 +1,37 @@
 # Assignment Shell
 
+## Project Structure
+
+There are 4 main directories:
+* commands: Contains implementation of the commands. Eg: switch, create, etc.
+* directoryfunc: Implemention of basic directory functionality. Eg: createDirectory.
+* global: Header file to handle global variable.
+* io: Handles the input and output of the project.
+* installer.c : Builds the project.
+* shell.c : Acts as the main function for the project. Handles calling all the functions for the commands, etc.
+
+
 ## Running the Code
 
-//add info about cmake, etc here
+### Clone the repo 
+Clone the repo to your local machine using:
+```
+git clone https://github.com/hohilwik/Assignment_Shell_DSA_Project.git
+```
+
+### Compile 
+Compile installer.c :
+```
+gcc installer.c -o installer
+```
+### Run
+Run the executable:
+```
+./installer
+```
+
+<br>
+<br>
 
 Run the script below with the log files to see the output of the test played back in the terminal.
 
@@ -12,13 +41,6 @@ This project maintains and stores log files. So this script uses the log files f
 
 This keeps track of everything so that the log files can be sent to TAs for debugging. Moreover it also solves the issue the situation where the code is not worked, but was working previously. 
 
-## Project Structure
-
-There are 4 directories:
-* commands: Contains implementation of the commands. Eg: switch, create, etc.
-* directoryfunc: Implemention of basic directory functionality. Eg: createDirectory.
-* global: Header file to handle global variable.
-* io: Handles the input and output of the project.
 
 ## Function Descriptions and Usage
 
@@ -32,7 +54,10 @@ Description of the functionality of each command and an example on how to use th
 	`flag=chdir(temp);`
 	
 	* Changes the subject directory in the shell prompt and changes the directory to the new one, accordingly.
-	 **Usage**: switch \<name_of_other_subject_folder\>  
+	 **Usage**: 
+	 ```bash 
+	 switch <name_of_other_subject_folder>
+	 ```  
 	 
 	Eg: 'switch DSA' would change the prompt from xyz/LA> to xyz/DSA> and navigate to the DSA folder.
 
@@ -46,7 +71,10 @@ Description of the functionality of each command and an example on how to use th
 	* Creates a directory for the assignment files in the current working directory. 
 	* (run the update command to update this directory with new assignment files)
 	
-	 **Usage**: create \<name_for_the_Assignment_folder>
+	 **Usage**: 
+	 ```bash 
+	 create <name_for_the_Assignment_folder> 
+	 ```
 	Eg: 'create Assignment' will store the assignment files into a folder called 'Assignment'.
 
 * **update \<assignment\>** :   Updates the assignment folder with the new assignment files. Deletes old files and replaces them with the new ones.
@@ -56,7 +84,10 @@ Description of the functionality of each command and an example on how to use th
 	(curl is used to download from the URL, then unzip and copy to the assignment folder)
 	* If download from local directory is selected, reads the absolute path of the directory stored in the log file and copies it to the assignment folder.
 	
-	 **Usage**: update \<name_of_the_Assignment_folder\>
+	 **Usage**: 
+	 ```bash 
+	 update <name_of_the_Assignment_folder> 
+	 ```
 	 Eg: 'update Assignment' will update the files in the Assignment folder with the latest files.
 
 * **test  \<assignment\>** :  Runs the submitter.py file in the  dist  folder.   Store  the  errors in a file.
@@ -70,7 +101,10 @@ Description of the functionality of each command and an example on how to use th
 	* If it exists runs it on the Assignment to check if it works as expected.
 	* Stores the results in a log file. This can be used to ensure that the Assignment works, or to store any possible errors that can then be used for debugging.
 	
-	 **Usage**: test \<Assignment\>
+	 **Usage**: 
+	 ```bash 
+	 test <Assignment> 
+	 ```
 	 Eg: 'test Assignment' runs submitter.py on Assignment.
 	
 	
@@ -81,7 +115,10 @@ Description of the functionality of each command and an example on how to use th
 	
 	The zip folder is stored in the current directory with the name \<assignment\>Zip.zip
 	
-	 **Usage**: submit \<Assignment\>
+	 **Usage**: 
+	 ```bash 
+	 submit <Assignment> 
+	 ```
 	 Eg: 'submit Assignment' creates a zip folder in the current working directory with the name \'AssignmentZip.zip'
 	
 	
@@ -98,7 +135,10 @@ Description of the functionality of each command and an example on how to use th
     
 	(deletes the auxilary folder at the end).
 
-	 **Usage**: compare \<my_Assignment\> \<my_submitted_AssignmentZip.zip\>
+	 **Usage**: 
+	 ```bash 
+	 compare <my_Assignment> <my_submitted_AssignmentZip.zip> 
+	 ```
 	Eg: 'compare my_Assignment my_AssignmentZip.zip' will print a list of the all the files that are in the folder my_Assignment but not in (or different from) the folder my_AssignmentZip.zip
 	
 	
@@ -111,6 +151,9 @@ Description of the functionality of each command and an example on how to use th
 	* The getPath function is called to get the absolute path to the Assignment folder:
 	`int getPath(char* path)`
 	
-	 **Usage**: use \<Assignment\>
+	 **Usage**: 
+	 ```bash 
+	 use <Assignment>
+	 ```
 	Eg: 'use Assignment' will change the prompt to xyz/DSA/Assignment> and every function call hereafter will be passed the default parameter \'Assignment\' if it is not provided. 
 
