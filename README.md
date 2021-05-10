@@ -32,7 +32,8 @@ Description of the functionality of each command and an example on how to use th
 	`flag=chdir(temp);`
 	
 	* Changes the subject directory in the shell prompt and changes the directory to the new one, accordingly.
-	 **Usage**: switch \<name_of_other_subject_folder\>
+	 **Usage**: switch \<name_of_other_subject_folder\>  
+	 
 	Eg: 'switch DSA' would change the prompt from xyz/LA> to xyz/DSA> and navigate to the DSA folder.
 
 * **create \<assignment\>** :   Creates  a  new  assignment folder. Puts the contents of the dist folder and the problem statement into this folder.
