@@ -15,21 +15,25 @@ There are 4 main directories:
 
 ### Clone the repo 
 Clone the repo to your local machine using:
-```
+```bash
 git clone https://github.com/hohilwik/Assignment_Shell_DSA_Project.git
 ```
 
 ### Compile 
 Compile installer.c :
-```
+```bash
 gcc installer.c -o installer
 ```
 ### Run
 Run the executable:
-```
+```bash
 ./installer
 ```
+After that, whenever you want to run the program, go to the directory where it was installed and enter into the terminal
 
+```bash
+./exe.out
+```
 <br>
 <br>
 
