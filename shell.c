@@ -10,6 +10,7 @@
 #include <sys/types.h>
 
 #include "commands/commands.h"
+#include "directoryfunc/directoryfunc.h"
 #include "io/io.h"
 
 int main()
