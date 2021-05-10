@@ -9,6 +9,9 @@
 #include <sys/syscall.h>
 #include <sys/types.h>
 
+#include "commands/commands.h"
+#include "io/io.h"
+
 int main()
 {
 	init();
@@ -74,7 +77,7 @@ int main()
 			break;
 			
 			case 3: //setup
-			setup(directory);
+			//setup(directory);
 			break;
 			
 			case 4: //test
@@ -103,7 +106,7 @@ int main()
 			
 			case 8: //cd 
 			dir_flag=chdir(directory);
-			if(dir_flag== -1){ printf("Directory does not exist\n"; }
+			if(dir_flag== -1){ printf("Directory does not exist\n"); }
 			break;
 			
 			case 9: //pwd 
