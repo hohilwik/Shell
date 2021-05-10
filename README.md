@@ -8,6 +8,10 @@ Run the script below with the log files to see the output of the test played bac
 
 `scriptreplay --timing=assignmentName_logtime.txt assignmentName_log.txt`
 
+This project maintains and stores log files. So this script uses the log files for the terminal session, and replays them like a video.
+
+This keeps track of everything so that the log files can be sent to TAs for debugging. Moreover it also solves the issue the situation where the code is not worked, but was working previously. 
+
 ## Project Structure
 
 There are 4 directories:
@@ -33,7 +37,7 @@ Description of the functionality of each command and an example on how to use th
 
 * **create \<assignment\>** :   Creates  a  new  assignment folder. Puts the contents of the dist folder and the problem statement into this folder.
 	
-	* Prompts user to choose whether to download the assignment files from a URL or to copy from a local directory
+	* Prompts user to choose whether to download the assignment files (dist files, problem statements, etc) from a URL or to copy from a local directory
 	* If URL is selected, asks input for URL and stores that in log file. 
 	* If download from local directory is selected, asks input for absolute path of the local directory and stores that in log file.
 	
@@ -46,7 +50,7 @@ Description of the functionality of each command and an example on how to use th
 
 * **update \<assignment\>** :   Updates the assignment folder with the new assignment files. Deletes old files and replaces them with the new ones.
 
-	* Prompts user to choose whether to download the assignment files from a URL or to copy from a local directory
+	* Prompts user to choose whether to download the assignment files from a URL or to copy from a local directory. (So can update from either, depending on the mode selected).
 	* If URL is selected, reads the URL from the log file (that was created when we ran the create command). 
 	(curl is used to download from the URL, then unzip and copy to the assignment folder)
 	* If download from local directory is selected, reads the absolute path of the directory stored in the log file and copies it to the assignment folder.
