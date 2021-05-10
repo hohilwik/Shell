@@ -46,24 +46,24 @@
 //obtains directory path
 char* DirPath()
 {
-    char* path_string;
+    char path_string[1024];
     
     //getcwd returns the path of the current directory as a string if it exists 
-    if((path_string = getcwd(NULL,0)) != NULL){
+    if( getcwd(path_string, sizeof(path_string) ) != NULL )
+	{
         return path_string;
-        free(path_string);
     }
-    return path_string;
+    return -1;
 }
 
 //Tests the file in the folder if it exists
 int Test_file(char *fileName)
 {
     //concatenating strings to get the directory path of the required folder/file
-    char dist[1024]= "/dist";
+    char dist[1024]= "./dist";
     char path[1024];
     strcpy(path, DirPath() );
-    strcat(path, dist);
+    strcat(path, "/dist");
     int flag1=chdir(dist);
 	if(flag1!=0)
 	{ 
@@ -99,6 +99,8 @@ int Test_file(char *fileName)
 	//stop logging
 	system("exit");
       }
+	  chdir("..");
+	  chdir("..");
 	return dir;
 	//return -2 if dist does not exist, -1 is /dist/file does not exist, and 0 if successful
 }
