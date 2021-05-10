@@ -1,3 +1,7 @@
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+
 int switchdir(char *directory)
 {
 	int flag;
