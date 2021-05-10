@@ -82,7 +82,7 @@ int getPath(char* path)
         return -1;
     }
 
-    fscanf(fptr, "%s", cwdPath);
+    fscanf(fptr, "%[^\n]s", cwdPath);
     
     // //testing
     //printf("%s\n", cwdPath);
