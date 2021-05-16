@@ -12,7 +12,7 @@
 int create(char *directory)
 {
 	int flag=0, mode;
-	int flag=createDir(directory);
+	flag=createDir(directory);
 	if(flag==1){ printf("Directory already exists!\n"); }
 	else if(flag== -1){ printf("Could not create directory\n"); }
 	else if(flag== 0)
@@ -33,7 +33,7 @@ int create(char *directory)
 	
 }
 
-int writelogger(char* directory, int mode);
+int writelogger(char* directory, int mode)
 {	
 	int flag=0;
 	if(mode==0) //locally
@@ -51,7 +51,7 @@ int writelogger(char* directory, int mode);
 			flag=8;
 		}
 		scanf("%s", line);
-		fprintf(line, %s, fptr);
+		fprintf(line, "%s", fptr);
 		fclose(fptr);
 		copyDir(line, directory); 
 	}
@@ -70,7 +70,7 @@ int writelogger(char* directory, int mode);
 			printf("Error opening URL_log file");
 			flag=9;
 		}
-		fprintf(line, %s, fptr);
+		fprintf(line, "%s", fptr);
 		fclose(fptr);
 	}
 	return flag;
