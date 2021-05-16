@@ -20,7 +20,7 @@ int createDir(char *dirname)
     //if file exists then flag=1
     if(flag==1){ return 1; }
     
-    int check = mkdir(newdirname);
+    int check = mkdir(newdirname, S_IRWXU);
     return check;
    //if successful, return 0, if permission denied or name too long, return -1
    //if directory already exists, return 1
