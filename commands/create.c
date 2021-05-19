@@ -18,11 +18,11 @@ int create(char *directory)
 	else if(flag== 0)
 	{
 		//
-		prompt(0);
 		printf("Enter the URL from where the relevant files are to be fetched/>");
-		writelogger(directory, 1);
 		prompt(0);
+		writelogger(directory, 1);
 		printf("Enter the absolute address of local directory from which files are to be fetched/>");
+		prompt(0);
 		writelogger(directory, 0);
 		//write to log file for future use
 		//yes there are different log files for each of them, fight me 
